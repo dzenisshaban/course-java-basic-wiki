@@ -18,12 +18,12 @@
         5. `Char` and `String`
         6. Constants
     1. [Operations](https://github.com/rakavets/javase/wiki/Operations)
-        1. Arithmetic operations
-        2. Compare operations
-        3. Logical operations
-        4. Bitwise operations
-        5. Assignment Operations
-        6. Priority Operations
+        1. [Arithmetic operations](Operations#Арифметические-операции)
+        2. [Compare operations](Operations#Операции-сравнения)
+        3. [Logical operations](Operations#Логические-операции)
+        4. [Bitwise operations](Operations#Побитовые-операции)
+        5. [Assignment Operations](Operations#Операции-присваивания)
+        6. [Priority Operations](Operations#Приоритет-операций)
     1. [Arrays](https://github.com/rakavets/javase/wiki/Arrays)
         1. One-dimensional arrays
         2. Multidimensional arrays
