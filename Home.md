@@ -1,19 +1,31 @@
 ## Software
-- Install [JDK 11](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
-- Install [InteliJ IDEA Community Edition](https://www.jetbrains.com).
-- Install [Slack](https://slack.com) to mobile device or use web-version.
-
-## Registration
-- [GitHub](https://github.com/) and follow on [rakavets](https://github.com/rakavets)
-- [Slack](https://slack.com/) and sing in [rakavets.slack.com](https://rakavets.slack.com)
+- [OpenJDK 11](https://openjdk.java.net/).
+- [InteliJ IDEA Community Edition](https://www.jetbrains.com).
 
 ## Theory
 
-1. The Basics of Java Programming
-    1. Data types and variables
-        1. [Data types](https://github.com/rakavets/javase/wiki/Data-types)
-        1. [Variables](https://github.com/rakavets/javase/wiki/Variables)
-    1. Operators
-        1. [Arithmetic operations](https://github.com/rakavets/javase/wiki/Arithmetic-operations)
-        1. [Comparison operations](https://github.com/rakavets/javase/wiki/Comparison-operations)
-        1. [Logical operations](https://github.com/rakavets/javase/wiki/Logical-operations)
+1. [Intro to Java](https://github.com/rakavets/javase/wiki/Intro-to-Java)
+2. [First programm with Java](https://github.com/rakavets/javase/wiki/First-program-with-Java)
+    1. Structure for program
+    2. First program with Terminal
+    3. IntelliJ IDEA
+3. The Basics of Java Programming
+    1. [Data types and variables](https://github.com/rakavets/javase/wiki/Data-types-and-variables)
+        1. Basic types
+        2. Reference types
+        3. Variables
+        4. Using suffixes
+        5. `Char` and `String`
+        6. Constants
+    1. [Operations](https://github.com/rakavets/javase/wiki/Operations)
+        1. Arithmetic operations
+        2. Compare operations
+        3. Logical operations
+        4. Bitwise operations
+        5. Assignment Operations
+        6. Priority Operations
+    1. [Arrays](https://github.com/rakavets/javase/wiki/Arrays)
+        1. One-dimensional arrays
+        2. Multidimensional arrays
+        3. Arrays of arrays
+        4. Work with arrays and class `Arrays`
