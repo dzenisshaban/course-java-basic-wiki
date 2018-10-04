@@ -17,6 +17,10 @@
         4. Using suffixes
         5. `Char` and `String`
         6. Constants
+    1. [Base data type conversions](Base-data-type-conversions)
+        1. [Data loss during conversion](Base-data-type-conversions#Потеря-данных-при-преобразовании)
+        2. [Truncation of rational numbers to integers](Base-data-type-conversions#Усечение-рациональных-чисел-до-целых)
+        3. [Transformations during operations](Base-data-type-conversions#Преобразования-при-операциях)
     1. [Operations](https://github.com/rakavets/javase/wiki/Operations)
         1. [Arithmetic operations](Operations#Арифметические-операции)
         2. [Compare operations](Operations#Операции-сравнения)
@@ -29,3 +33,4 @@
         2. Multidimensional arrays
         3. Arrays of arrays
         4. Work with arrays and class `Arrays`
+ 
