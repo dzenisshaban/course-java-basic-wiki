@@ -11,12 +11,12 @@
     3. IntelliJ IDEA
 3. The Basics of Java Programming
     1. [Data types and variables](Data-types-and-variables)
-        1. [Basic types](Data-types-and-variables#Базовые-типы-)
-        2. [Reference types](Data-types-and-variables#Ссылочные-типы-)
-        3. [Variables](Data-types-and-variables#Переменные-)
-        4. [Using suffixes](Data-types-and-variables#Использование-суффиксов-)
-        5. [`Char` and `String`](Data-types-and-variables#Символы-и-строки-)
-        6. [Constants](Data-types-and-variables#Константы-)
+        1. [Basic types](Data-types-and-variables#Базовые-типы)
+        2. [Reference types](Data-types-and-variables#Ссылочные-типы)
+        3. [Variables](Data-types-and-variables#Переменные)
+        4. [Using suffixes](Data-types-and-variables#Использование-суффиксов)
+        5. [`Char` and `String`](Data-types-and-variables#Символы-и-строки)
+        6. [Constants](Data-types-and-variables#Константы)
     1. [Base data type conversions](Base-data-type-conversions)
         1. [Data loss during conversion](Base-data-type-conversions#Потеря-данных-при-преобразовании)
         2. [Truncation of rational numbers to integers](Base-data-type-conversions#Усечение-рациональных-чисел-до-целых)
