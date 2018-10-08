@@ -5,6 +5,8 @@
 ## Theory
 
 1. [Intro to Java](Intro-to-Java)
+    1. [Java features](Intro-to-Java#Особенности-java)
+    2. [Java installation](Intro-to-Java#Установка-java)
 2. [First programm with Java](First-program-with-Java)
     1. Structure for program
     2. First program with Terminal
