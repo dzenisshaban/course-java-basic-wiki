@@ -29,8 +29,8 @@
         5. [Assignment Operations](Operations#Операции-присваивания)
         6. [Priority Operations](Operations#Приоритет-операций)
     1. [Arrays](Arrays)
-        1. One-dimensional arrays
-        2. Multidimensional arrays
-        3. Arrays of arrays
-        4. Work with arrays and class `Arrays`
+        1. [One-dimensional arrays](Arrays#Одномерные-массивы)
+        2. [Multidimensional arrays](Arrays#Многомерные-массивы)
+        3. [Arrays of arrays](Arrays#Массив-массивов)
+        4. [Work with arrays and class `Arrays`](Arrays#Работа-с-массивами-и-класс-arrays)
  
