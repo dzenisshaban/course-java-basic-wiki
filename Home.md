@@ -40,4 +40,7 @@
         2. [Multidimensional arrays](Arrays#Многомерные-массивы)
         3. [Arrays of arrays](Arrays#Массив-массивов)
         4. [Work with arrays and class `Arrays`](Arrays#Работа-с-массивами-и-класс-arrays)
- 
+    1. [Conditional constructions](Conditional-constructions)
+        1. [Construction `if/else`](Conditional-constructions#Конструкция-if/else)
+        2. [Construction `switch`](Conditional-constructions#Конструкция-switch)
+        3. [Ternary operation](Conditional-constructions#Тернарная-операция)
