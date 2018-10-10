@@ -9,8 +9,13 @@
     2. [Java installation](Intro-to-Java#Установка-java)
 2. [First programm with Java](First-program-with-Java)
     1. [Structure for program](First-program-with-Java#Структура-программы)
+        1. [Import area](First-program-with-Java#Область-подключения-внешних-пакетов)
+        2. [Code area](First-program-with-Java#Область-написания-кода)
     2. [First program with Terminal](First-program-with-Java#Первая-программа)
     3. [IntelliJ IDEA](First-program-with-Java#intellij-idea)
+        1. [Install](First-program-with-Java#Установка)
+        2. [Setting](First-program-with-Java#Настройка)
+        3. [First project with IntellJ IDEA](First-program-with-Java#Первый-проект-в-intellij-idea)
 3. The Basics of Java Programming
     1. [Data types and variables](Data-types-and-variables)
         1. [Basic types](Data-types-and-variables#Базовые-типы)
