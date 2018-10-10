@@ -8,9 +8,9 @@
     1. [Java features](Intro-to-Java#Особенности-java)
     2. [Java installation](Intro-to-Java#Установка-java)
 2. [First programm with Java](First-program-with-Java)
-    1. Structure for program
-    2. First program with Terminal
-    3. IntelliJ IDEA
+    1. [Structure for program](First-program-with-Java#Структура-программы)
+    2. [First program with Terminal](First-program-with-Java#Первая-программа)
+    3. [IntelliJ IDEA](First-program-with-Java#intellij-idea)
 3. The Basics of Java Programming
     1. [Data types and variables](Data-types-and-variables)
         1. [Basic types](Data-types-and-variables#Базовые-типы)
