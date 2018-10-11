@@ -17,6 +17,12 @@
         2. [Setting](First-program-with-Java#Настройка)
         3. [First project with IntellJ IDEA](First-program-with-Java#Первый-проект-в-intellij-idea)
 3. The Basics of Java Programming
+    1. [Number systems](Number-systems)
+        1. [Binary](Number-systems#Двоичная)
+        2. [Octal](Number-systems#Восьмиричная)
+        3. [Decimal](Number-systems#Десятичная)
+        4. [Hexadecimal](Number-systems#Шестнадцатеричная)
+        5. [Transfer from one system to another](Number-systems#Перевод-из-одной-системы-в-другую)
     1. [Data types and variables](Data-types-and-variables)
         1. [Basic types](Data-types-and-variables#Базовые-типы)
         2. [Reference types](Data-types-and-variables#Ссылочные-типы)
