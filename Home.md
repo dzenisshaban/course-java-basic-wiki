@@ -1,9 +1,9 @@
 ## Software
-- [OpenJDK 11](https://openjdk.java.net/).
-- [InteliJ IDEA Community Edition](https://www.jetbrains.com).
+- [OpenJDK 11](https://openjdk.java.net/)
+- [InteliJ IDEA Community Edition](https://www.jetbrains.com)
+
 
 ## Theory
-
 1. [Intro to Java](Intro-to-Java)
     1. [Java features](Intro-to-Java#Особенности-java)
     2. [Java installation](Intro-to-Java#Установка-java)
@@ -34,7 +34,7 @@
         1. [Data loss during conversion](Base-data-type-conversions#Потеря-данных-при-преобразовании)
         2. [Truncation of rational numbers to integers](Base-data-type-conversions#Усечение-рациональных-чисел-до-целых)
         3. [Transformations during operations](Base-data-type-conversions#Преобразования-при-операциях)
-    1. [Operations](https://github.com/rakavets/javase/wiki/Operations)
+    1. [Operations](Operations)
         1. [Arithmetic operations](Operations#Арифметические-операции)
         2. [Compare operations](Operations#Операции-сравнения)
         3. [Logical operations](Operations#Логические-операции)
