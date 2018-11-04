@@ -2,7 +2,6 @@
 Кроме обычных методов и полей класс может иметь статические поля, методы, константы и инициализаторы. Например, главный класс программы имеет метод `main`, который является статическим:
 ```java
 public static void main(String[] args) {
-     
 }
 ```
 
@@ -155,9 +154,9 @@ class Person {
 ```java
 public class Program {
     public static void main(String[] args) {
-        System.out.println(Operation.sum(45, 23));          // 68
-        System.out.println(Operation.subtract(45, 23));     // 22
-        System.out.println(Operation.multiply(4, 23));      // 92
+        System.out.println(Operation.sum(45, 23)); // 68
+        System.out.println(Operation.subtract(45, 23)); // 22
+        System.out.println(Operation.multiply(4, 23)); // 92
     }
 }
 
