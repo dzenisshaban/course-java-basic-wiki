@@ -161,3 +161,8 @@
     1. [Класс File. Работа с файлами и каталогами](Класс-File)
     1. [Работа с ZIP-архивами](Работа-с-ZIP-архивами)
     1. [Класс Console](Класс-Console)
+1. Сетевое взаимодействие
+    1. [Сетевое взаимодействие](Сетевое-взаимодействие)
+    1. [InetAddress](InetAddress)
+    1. [Socket. ServerSocket](Socket.-ServerSocket)
+    1. [DatagramSocket. DatagramPacket](DatagramSocket.-DatagramPacket)
