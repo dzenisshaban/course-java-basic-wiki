@@ -3,6 +3,10 @@
 - [InteliJ IDEA](https://www.jetbrains.com)
 
 
+## Documentation
+- [Java Code Style](java-code-style)
+
+
 ## Theory
 1. [Введение](Intro-to-Java)
     1. [Java features](Intro-to-Java#Особенности-java)
