@@ -7,7 +7,7 @@
 
 Чтобы избежать путаницы при одновременной работе с несколькими системами счисления основание указывается в качестве нижнего индекса.
 
-![](images/number-systems.gif "Number systems")
+![](res/img/number-systems.gif "Number systems")
 
 
 ## Двоичная

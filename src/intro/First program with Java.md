@@ -111,23 +111,23 @@ public class HellToWorld {
 ### Настройка
 При первом запуске **IntelliJ IDEA** появится диалоговое окно с требованием указать путь до файла с настройками. Необходимо выбрать пункт *«Do not import settings»*. Если данное окно появилось после обновления или переустановки – выбрать исходную директорию.
 
-![](images/complete-installation.png "complete installation")
+![](res/img/complete-installation.png "complete installation")
 
 Следующим шагом настройки **intellij idea** будет выбор темы. ПО умолчанию их две – *стандартная* (светлая) и *Darcula* (тёмная).
 
-![](images/customize-intellij-idea.png "customize intellij idea")
+![](res/img/customize-intellij-idea.png "customize intellij idea")
 
 *IDEA* поддерживает огромное количество вспомогательных инструментов. Разумеется, новичку они все не нужны. Поэтому необходимо отключить их для увеличения производительности. Для этого в очередном диалоговом окне выбрать *«Disable All»*. Их можно подключить позднее в меню настроек.
 
-![](images/customize-intellij-idea2.png "customize intellij idea 2")
+![](res/img/customize-intellij-idea2.png "customize intellij idea 2")
 
-![](images/customize-intellij-idea3.png "customize intellij idea 3")
+![](res/img/customize-intellij-idea3.png "customize intellij idea 3")
 
 
 ### Первый проект в IntelliJ IDEA
 После установки и настройки *IntelliJ IDEA*, можно приступить к работе. Для этого необходимо создать проект в *IntelliJ IDEA*.
 
-![](images/welcome-to-intellij-idea.png "welcom to intellij idea")
+![](res/img/welcome-to-intellij-idea.png "welcom to intellij idea")
 
 Диалоговое окно предлагает варианты:
 - создать новый проект (*Create New Project*)
