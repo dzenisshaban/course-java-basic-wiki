@@ -1,6 +1,7 @@
 ## Software
-- [OpenJDK](https://openjdk.java.net/)
+- [AdoptOpenJDK](https://adoptopenjdk.net/)
 - [InteliJ IDEA](https://www.jetbrains.com)
+- [Git](https://git-scm.com/)
 
 
 ## Documentation
