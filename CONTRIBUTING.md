@@ -14,7 +14,14 @@ Please follow these steps to have your contribution considered by the maintainer
 - Reference issues and pull requests liberally after the first line
 - The first line of the commit contains the name of the artifact (task/test/doc) and the name of the module
 - Consider starting the commit message with:
-    - `add`: when adding artifact
-    - `rm`: when removing artifact
-    - `fix`: when fixing mistake
-    - `refactor`: when updating artifact or strong operation
+    - `add:` when adding artifact
+    - `rm:` when removing artifact
+    - `fix:` when fixing mistake
+    - `refactor:` when updating artifact or strong operation
+    - `doc:` when adding/removing/fixing/updating documentation
+
+### Artifactory naming
+- Use only English
+- For files and directories: kebab case (example: `stream-api`) expect:
+    - `Markdown` files: where the first letter and keywords can be uppercase (example: `Method-overloading-in-Java.md`)
+    - documentation
