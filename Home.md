@@ -19,13 +19,14 @@
 1. [Первая программа](first-program-with-java)
 1. Основы программирования
     1. [Типы данных и переменные](data-types-and-variables)
+    1. [Консольный ввод и вывод](standard-streams)
     1. [Преобразование типов](base-data-type-conversions)
     1. [Операции](operations)
-    1. [Массивы](arrays)
     1. [Условные конструкции](conditional-constructions)
-    1. [Циклы](loops)
+    1. [Массивы](arrays)
     1. [Методы](methods)
-    1. [Консольный ввод и вывод](standard-streams)
+    1. [Циклы](loops)
+    1. [Работа со строками](strings)
     1. [Обработка исключений](exception-handling)
 1. Объектно-ориентированное программирование
     1. [Классы и объекты](классы-и-объекты)
