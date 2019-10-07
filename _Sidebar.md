@@ -1,7 +1,13 @@
+## Theory
+### Common
+1. [Системы счисления](number-systems)
+1. [Рекурсия](recursion)
+
+
+### Java
 1. [Введение](intro-to-java)
 1. [Первая программа](first-program-with-java)
 1. Основы программирования
-    1. [Системы счисления](number-systems)
     1. [Типы данных и переменные](data-types-and-variables)
     1. [Преобразование типов](base-data-type-conversions)
     1. [Операции](operations)
