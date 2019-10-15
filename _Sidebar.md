@@ -2,6 +2,7 @@
 ### Common
 1. [Системы счисления](number-systems)
 1. [Рекурсия](recursion)
+1. [Code Convention](code-convention)
 
 
 ### Java
