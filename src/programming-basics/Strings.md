@@ -28,7 +28,7 @@ public static void main(String[] args) {
 ```java
 String str1 = "Java";
 String str2 = "Hello";
-String str3 = str1 + " " + str2;
+String str3 = str2 + " " + str1;
          
 System.out.println(str3); // Hello Java
 ```
@@ -245,7 +245,7 @@ boolean end = str.endsWith("exe"); // true
 
 ```java
 String str = "Hello world";
-String replStr1 = str.replace('l', 'd'); // Heddo wordd
+String replStr1 = str.replace('l', 'd'); // Heddo world
 String replStr2 = str.replace("Hello", "Bye"); // Bye world
 ```
 
@@ -502,7 +502,7 @@ import java.util.regex.Pattern;
  
 public class StringsApp {
     public static void main(String[] args) {
-        String input = "Hello Java! Hello JavaScript! JavaSE 8.";
+        String input = "Hello Java! Hello JavaScript! JavaSE.";
         Pattern pattern = Pattern.compile("[ ,.!?]");
         String[] words = pattern.split(input);
         for (String word : words) {
@@ -522,7 +522,6 @@ Hello
 JavaScript
 
 JavaSE
-8
 ```
 
 При этом все символы-разделители удаляются. Однако, данный способ разбивки не идеален: у нас остаются некоторые пробелы, которые расцениваются как лексемы, а не как разделители. Для более точной и изощренной разбивки нам следует применять элементы регулярных выражений. Так, заменим шаблон на следующий:
@@ -595,7 +594,7 @@ import java.util.regex.Pattern;
  
 public class StringsApp {
     public static void main(String[] args) {
-        String input = "Hello Java! Hello JavaScript! JavaSE 8.";
+        String input = "Hello Java! Hello JavaScript! JavaSE.";
         Pattern pattern = Pattern.compile("Java(\\w*)");
         Matcher matcher = pattern.matcher(input);
         while (matcher.find()) {
@@ -620,11 +619,11 @@ JavaSE
 Можно сделать замену всех совпадений с помощью метода `replaceAll()`:
 
 ```java
-String input = "Hello Java! Hello JavaScript! JavaSE 8.";
+String input = "Hello Java! Hello JavaScript! JavaSE.";
 Pattern pattern = Pattern.compile("Java(\\w*)");
 Matcher matcher = pattern.matcher(input);
 String newStr = matcher.replaceAll("HTML");
-System.out.println(newStr); // Hello HTML! Hello HTML! HTML 8.
+System.out.println(newStr); // Hello HTML! Hello HTML! HTML.
 ```
 
 
@@ -670,7 +669,7 @@ if (result == true) {
 Также надо отметить, что в классе `String` также имеется метод `replaceAll()` с заменой всех выражений, удовлетворяющих регулярному выражению:
 
 ```java
-String input = "Hello Java! Hello JavaScript! JavaSE 8.";
+String input = "Hello Java! Hello JavaScript! JavaSE.";
 String myStr =input.replaceAll("Java(\\w*)", "HTML");
-System.out.println(myStr); // Hello HTML! Hello HTML! HTML 8.
+System.out.println(myStr); // Hello HTML! Hello HTML! HTML.
 ```
