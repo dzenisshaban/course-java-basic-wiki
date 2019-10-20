@@ -63,7 +63,7 @@
     1. [Интерфейс Map и класс HashMap](interface-map-and-class-hashmap)
     1. [Интерфейсы SortedMap и NavigableMap. Класс TreeMap](interfaces-sortedmap-navigablemap-and-class-treemap)
     1. [Итераторы](interface-iterator)
-1. [Аннотации](аннотации)
+1. [Аннотации](annotations)
 1. Лямбда-выражения
     1. [Введение в лямбда-выражения](введение-в-лямбда-выражения)
     1. [Лямбды как параметры и результаты методов](лямбды-как-параметрыи-результаты-методов)
