@@ -1,4 +1,4 @@
-## Встроенные функциональные интерфейсы
+# Встроенные функциональные интерфейсы
 В JDK 8 вместе с самой функциональностью лямбда-выражений также было добавлено некоторое количество встроенных функциональных интерфейсов, которые мы можем использовать в различных ситуациях и в различные API в рамках JDK 8. В частности, ряд далее рассматриваемых интерфейсов широко применяется в `Stream API` - новом прикладном интерфейсе для работы с данными. Рассмотрим основные из этих интерфейсов:
 - `Predicate<T>`
 - `Consumer<T>`
@@ -8,14 +8,16 @@
 - `BinaryOperator<T>`
 
 
-### `Predicate<T>`
+## `Predicate<T>`
 Функциональный интерфейс `Predicate<T>` проверяет соблюдение некоторого условия. Если оно соблюдается, то возвращается значение `true`. В качестве параметра лямбда-выражение принимает объект типа `T`:
+
 ```java
 public interface Predicate<T> {
     boolean test(T t);
 }
 ```
 Например:
+
 ```java
 import java.util.function.Predicate;
  
@@ -30,8 +32,9 @@ public class LambdaApp {
 ```
 
 
-### `BinaryOperator<T>`
+## `BinaryOperator<T>`
 `BinaryOperator<T>` принимает в качестве параметра два объекта типа `T`, выполняет над ними бинарную операцию и возвращает ее результат также в виде объекта типа `T`:
+
 ```java
 public interface BinaryOperator<T> {
     T apply(T t1, T t2);
@@ -39,6 +42,7 @@ public interface BinaryOperator<T> {
 ```
 
 Например:
+
 ```java
 import java.util.function.BinaryOperator;
  
@@ -55,6 +59,7 @@ public class LambdaApp {
 
 ### `UnaryOperator<T>`
 `UnaryOperator<T>` принимает в качестве параметра объект типа `T`, выполняет над ними операции и возвращает результат операций в виде объекта типа `T`:
+
 ```java
 public interface UnaryOperator<T> {
     T apply(T t);
@@ -62,6 +67,7 @@ public interface UnaryOperator<T> {
 ```
 
 Например:
+
 ```java
 import java.util.function.UnaryOperator;
  
@@ -76,6 +82,7 @@ public class LambdaApp {
 
 ### `Function<T, R>`
 Функциональный интерфейс `Function<T, R>` представляет функцию перехода от объекта типа `T` к объекту типа `R`:
+
 ```java
 public interface Function<T, R> {
     R apply(T t);
@@ -83,6 +90,7 @@ public interface Function<T, R> {
 ```
 
 Например:
+
 ```java
 import java.util.function.Function;
 
@@ -97,6 +105,7 @@ public class LambdaApp {
 
 ### `Consumer<T>`
 `Consumer<T>` выполняет некоторое действие над объектом типа `T`, при этом ничего не возвращая:
+
 ```java
 public interface Consumer<T> {
     void accept(T t);
@@ -104,6 +113,7 @@ public interface Consumer<T> {
 ```
 
 Например:
+
 ```java
 import java.util.function.Consumer;
 
@@ -118,6 +128,7 @@ public class LambdaApp {
 
 ### `Supplier<T>`
 `Supplier<T>` не принимает никаких аргументов, но должен возвращать объект типа `T`:
+
 ```java
 public interface Supplier<T> {
     T get();
@@ -125,6 +136,7 @@ public interface Supplier<T> {
 ```
 
 Например:
+
 ```java
 import java.util.Scanner;
 import java.util.function.Supplier;
