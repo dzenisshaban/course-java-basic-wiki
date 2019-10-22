@@ -15,9 +15,10 @@ Please follow these steps to have your contribution considered by the maintainer
 - The first line of the commit contains the name of the artifact (task/test/doc) and the name of the module
 - Consider starting the commit message with:
     - `add:` when adding artifact
-    - `rm:` when removing artifact
     - `fix:` when fixing mistake
-    - `refactor:` when updating artifact or strong operation
+    - `refactor:` when refactor artifact or apply strong changes
+    - `remove:` when removing artifact
+    - `update:` when update 'Home' or '_Sidebar'
     - `doc:` when adding/removing/fixing/updating documentation
 
 ### Artifactory naming
