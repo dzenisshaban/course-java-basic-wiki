@@ -12,6 +12,11 @@
 - [Java Code Style](java-code-style)
 
 
+## Useful links
+- [RegEx](https://javarush.ru/groups/posts/regulyarnye-vyrazheniya-v-java)
+- [Стек и куча в Java](https://topjava.ru/blog/stack-and-heap-in-java)
+
+
 ## Theory
 ### Common
 1. [Системы счисления](number-systems)
