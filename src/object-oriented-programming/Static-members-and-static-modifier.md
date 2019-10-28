@@ -11,7 +11,7 @@ public static void main(String[] args) {
 
 
 ## Статические поля
-При создании объектов класса для каждого объекта создается своя копия нестатических обычных полей. А статические поля являются общими для всего класса. Поэому они могут использоваться без создания объектов класса.
+При создании объектов класса для каждого объекта создается своя копия нестатических обычных полей. А статические поля являются общими для всего класса. Поэтому они могут использоваться без создания объектов класса.
 
 Например, создадим статическую переменную:
 
@@ -21,14 +21,14 @@ public class Program {
         Person tom = new Person();
         Person bob = new Person();
 
-        tom.displayId(); // Id = 1
-        bob.displayId(); // Id = 2
+        tom.displayId(); // "Id: 1"
+        bob.displayId(); // "Id: 2"
         System.out.println(Person.counter); // 3
 
         Person.counter = 8; // изменяем Person.counter
 
         Person sam = new Person();
-        sam.displayId(); // Id = 8
+        sam.displayId(); // "Id: 8"
     }
 }
 
@@ -41,7 +41,7 @@ class Person {
     }
 
     public void displayId() {
-        System.out.printf("Id: %d \n", id);
+        System.out.printf("Id: %d\n", id);
     }
 }
 ```
@@ -62,8 +62,8 @@ Person.counter = 8; // изменяем значение
 public class Program {
     public static void main(String[] args) {
         double radius = 60;
-        System.out.printf("Radisu: %f \n", radius); // 60
-        System.out.printf("Area: %f \n", Math.PI * radius); // 188,4
+        System.out.printf("Radius: %f\n", radius); // "Radius: 60"
+        System.out.printf("Area: %f\n", Math.PI * radius); // "Area: 188,4"
     }
 }
 
@@ -90,8 +90,8 @@ public class Program {
         Person tom = new Person();
         Person bob = new Person();
 
-        tom.displayId(); // Id = 105
-        bob.displayId(); // Id = 106
+        tom.displayId(); // "Id: 105"
+        bob.displayId(); // "Id: 106"
     }
 }
 
@@ -110,7 +110,7 @@ class Person {
     }
 
     public void displayId() {
-        System.out.printf("Id: %d \n", id);
+        System.out.printf("Id: %d\n", id);
     }
 }
 ```
@@ -128,12 +128,12 @@ class Person {
 ```java
 public class Program {
     public static void main(String[] args) {
-        Person.displayCounter(); // Counter: 1
+        Person.displayCounter(); // "Counter: 1"
 
         Person tom = new Person();
         Person bob = new Person();
 
-        Person.displayCounter(); // Counter: 3
+        Person.displayCounter(); // "Counter: 3"
     }
 }
 
@@ -146,11 +146,11 @@ class Person {
     }
 
     public static void displayCounter() {
-        System.out.printf("Counter: %d \n", counter);
+        System.out.printf("Counter: %d\n", counter);
     }
 
     public void displayId() {
-        System.out.printf("Id: %d \n", id);
+        System.out.printf("Id: %d\n", id);
     }
 }
 ```
@@ -186,4 +186,4 @@ class Operation {
 
 ```
 
-В данном случае для методов `sum`, `subtract`, `multiply` не имеет значения, какой именно экземпляр класса `Operation` используется. Эти методы работают только с параметрами, не затрагивая состояние класса. Поэтому их можно определить как статические.
+В данном случае для методов `sum()`, `subtract()`, `multiply()` не имеет значения, какой именно экземпляр класса `Operation` используется. Эти методы работают только с параметрами, не затрагивая состояние класса. Поэтому их можно определить как статические.
