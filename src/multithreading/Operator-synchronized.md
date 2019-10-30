@@ -1,5 +1,6 @@
-## Синхронизация потоков. Оператор `synchronized`
+## Оператор `synchronized`
 При работе потоки нередко обращаются к каким-то общим ресурсам, которые определены вне потока, например, обращение к какому-то файлу. Если одновременно несколько потоков обратятся к общему ресурсу, то результаты выполнения программы могут быть неожиданными и даже непредсказуемыми. Например, определим следующий код:
+
 ```java
 public class Program {
     public static void main(String[] args) {
@@ -31,6 +32,7 @@ class CountThread implements Runnable {
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
+                System.out.println(e.toString());
             }
         }
     }
@@ -40,6 +42,7 @@ class CountThread implements Runnable {
 Здесь определен класс `CommonResource`, который представляет общий ресурс и в котором определено одно целочисленное поле `x`.
 
 Этот ресурс используется классом потока `CountThread`. Этот класс просто увеличивает в цикле значение `x` на единицу. Причем при входе в поток значение `x = 1`:
+
 ```java
 res.x = 1;
 ```
@@ -47,7 +50,8 @@ res.x = 1;
 То есть в итоге мы ожидаем, что после выполнения цикла `res.x` будет равно `4`.
 
 В главном классе программы запускается пять потоков. То есть мы ожидаем, что каждый поток будет увеличивать `res.x` с `1` до `4` и так пять раз. Но если мы посмотрим на результат работы программы, то он будет иным:
-```console
+
+```out
 Thread 1 1 
 Thread 2 1 
 Thread 3 1 
@@ -73,6 +77,7 @@ Thread 2 16
 То есть пока один поток не окончил работу с полем `res.x`, с ним начинает работать другой поток.
 
 Чтобы избежать подобной ситуации, надо **синхронизировать потоки**. Одним из способов синхронизации является использование ключевого слова `synchronized`. Этот оператор предваряет блок кода или метод, который подлежит синхронизации. Для его применения изменим класс `CountThread`:
+
 ```java
 class CountThread implements Runnable {
     CommonResource res;
@@ -90,6 +95,7 @@ class CountThread implements Runnable {
                 try {
                     Thread.sleep(100);
                 } catch (InterruptedException e) {
+                    System.out.println(e.toString());
                 }
             }
         }
@@ -104,7 +110,8 @@ class CountThread implements Runnable {
 После освобождения монитора его захватывает другой поток, а все остальные потоки продолжают ожидать его освобождения.
 
 В итоге консольный вывод изменится:
-```console
+
+```out
 Thread 1 1 
 Thread 1 2
 Thread 1 3
@@ -127,88 +134,48 @@ Thread 2 3
 Thread 2 4
 ```
 
-При применении оператора synchronized к методу пока этот метод не завершит выполнение, монопольный доступ имеет только один поток - первый, который начал его выполнение. Для применения synchronized к методу, изменим классы программы:
+При применении оператора `synchronized` к методу пока этот метод не завершит выполнение, монопольный доступ имеет только один поток - первый, который начал его выполнение. Для применения `synchronized` к методу, изменим классы программы:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
+```java
 public class Program {
- 
     public static void main(String[] args) {
-         
         CommonResource commonResource= new CommonResource();
-        for (int i = 1; i < 6; i++){
-             
+        for (int i = 1; i < 6; i++) {
             Thread t = new Thread(new CountThread(commonResource));
-            t.setName("Thread "+ i);
+            t.setName("Thread " + i);
             t.start();
         }
     }
 }
  
-class CommonResource{
-     
+class CommonResource {
     int x;
-    synchronized void increment(){
-        x=1;
-        for (int i = 1; i < 5; i++){
+
+    synchronized void increment() {
+        x = 1;
+        for (int i = 1; i < 5; i++) {
             System.out.printf("%s %d \n", Thread.currentThread().getName(), x);
             x++;
-            try{
+            try {
                 Thread.sleep(100);
+            } catch(InterruptedException e) {
+                System.out.println(e.toString());
             }
-            catch(InterruptedException e){}
         }
     }
 }
  
-class CountThread implements Runnable{
- 
+class CountThread implements Runnable {
     CommonResource res;
-    CountThread(CommonResource res){
-        this.res=res;
+
+    CountThread(CommonResource res) {
+        this.res = res;
     }
      
-    public void run(){
+    public void run() {
         res.increment();
     }
 }
-Результат работы в данном случае будет аналогичен примеру выше с блоком synchronized. Здесь опять в дело вступает монитор объекта CommonResource - общего объекта для всех потоков. Поэтому синхронизированным объявляется не метод run() в классе CountThread, а метод increment класса CommonResource. Когда первый поток начинает выполнение метода increment, он захватывает монитор объекта CommonResource. А все потоки также продолжают ожидать его освобождения.
+```
+
+Результат работы в данном случае будет аналогичен примеру выше с блоком `synchronized`. Здесь опять в дело вступает монитор объекта `CommonResource` - общего объекта для всех потоков. Поэтому синхронизированным объявляется не метод `run()` в классе `CountThread`, а метод `increment()` класса `CommonResource`. Когда первый поток начинает выполнение метода `increment()`, он захватывает монитор объекта `CommonResource`. А все потоки также продолжают ожидать его освобождения.

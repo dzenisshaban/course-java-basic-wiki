@@ -1,139 +1,46 @@
-Условия в блокировках
+# Interface `Condition`
 
-Применение условий в блокировках позволяет добиться контроля над управлением доступом к потокам. Условие блокировки представлет собой объект интерфейса Condition из пакета java.util.concurrent.locks.
+Применение условий в блокировках позволяет добиться контроля над управлением доступом к потокам. Условие блокировки представлет собой объект интерфейса `Condition` из пакета `java.util.concurrent.locks`.
 
-Применение объектов Condition во многом аналогично использованию методов wait/notify/notifyAll класса Object, которые были рассмотрены в одной из прошлых тем. В частности, мы можем использовать следующие методы интерфейса Condition:
+Применение объектов `Condition` во многом аналогично использованию методов `wait()/notify()/notifyAll()` класса `Object`, которые были рассмотрены в одной из прошлых тем. В частности, мы можем использовать следующие методы интерфейса `Condition`:
 
-await: поток ожидает, пока не будет выполнено некоторое условие и пока другой поток не вызовет методы signal/signalAll. Во многом аналогичен методу wait класса Object
+- `await()` поток ожидает, пока не будет выполнено некоторое условие и пока другой поток не вызовет методы `signal()`/`signalAll()`. Во многом аналогичен методу wait класса `Object`
+- `signal()` сигнализирует, что поток, у которого ранее был вызван метод `await()`, может продолжить работу. Применение аналогично использованию методу `notify()` класса `Object`
+- `signalAll()` сигнализирует всем потокам, у которых ранее был вызван метод `await()`, что они могут продолжить работу. Аналогичен методу `notifyAll()` класса `Object`
 
-signal: сигнализирует, что поток, у которого ранее был вызван метод await(), может продолжить работу. Применение аналогично использованию методу notify класса Object
+Эти методы вызываются из блока кода, который попадает под действие блокировки `ReentrantLock`. Сначала, используя эту блокировку, нам надо получить объект `Condition`:
 
-signalAll: сигнализирует всем потокам, у которых ранее был вызван метод await(), что они могут продолжить работу. Аналогичен методу notifyAll() класса Object
-
-Эти методы вызываются из блока кода, который попадает под действие блокировки ReentrantLock. Сначала, используя эту блокировку, нам надо получить объект Condition:
-
-1
-2
+```java
 ReentrantLock locker = new ReentrantLock();
 Condition condition = locker.newCondition();
+```
+
 Как правило, сначала проверяется условие доступа. Если соблюдается условие, то поток ожидает, пока условие не изменится:
 
-1
-2
-while (условие)
+```java
+while (условие) {
     condition.await();
+}
+```
+
 После выполнения всех действий другим потокам подается сигнал об изменении условия:
 
-1
+```java
 condition.signalAll();
-Важно в конце вызвать метод signal/signalAll, чтобы избежать возможности взаимоблокировки потоков.
+```
 
-Для примера возьмем задачу из темы про методы wait/notify и изменим ее, применяя объект Condition.
+Важно в конце вызвать метод `signal()`/`signalAll()`, чтобы избежать возможности взаимоблокировки потоков.
+
+Для примера возьмем задачу из темы про методы `wait()`/`notify()` и изменим ее, применяя объект `Condition`.
 
 Итак, у нас есть склад, где могут одновременно быть размещено не более 3 товаров. И производитель должен произвести 5 товаров, а покупатель должен эти товары купить. В то же время покупатель не может купить товар, если на складе нет никаких товаров:
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95
+```java
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.Condition;
  
 public class Program {
-  
     public static void main(String[] args) {
-          
         Store store=new Store();
         Producer producer = new Producer(store);
         Consumer consumer = new Consumer(store);
@@ -141,24 +48,25 @@ public class Program {
         new Thread(consumer).start();
     }
 }
+
 // Класс Магазин, хранящий произведенные товары
-class Store{
-   private int product=0;
+class Store {
+   private int product = 0;
    ReentrantLock locker;
    Condition condition;
     
-   Store(){
+   Store() {
        locker = new ReentrantLock(); // создаем блокировку
        condition = locker.newCondition(); // получаем условие, связанное с блокировкой
    }
     
    public void get() {
-        
       locker.lock();
-      try{
+      try {
           // пока нет доступных товаров на складе, ожидаем
-          while (product<1)
+          while (product < 1) {
               condition.await();
+          }
            
           product--;
           System.out.println("Покупатель купил 1 товар");
@@ -166,64 +74,68 @@ class Store{
            
           // сигнализируем
           condition.signalAll();
-      }
-      catch (InterruptedException e){
+      } catch (InterruptedException e) {
           System.out.println(e.getMessage());
-      }
-      finally{
+      } finally {
           locker.unlock();
       }
    }
+
    public void put() {
-        
        locker.lock();
-       try{
+       try {
           // пока на складе 3 товара, ждем освобождения места
-          while (product>=3)
+          while (product >= 3) {
               condition.await();
+          }
            
           product++;
           System.out.println("Производитель добавил 1 товар");
           System.out.println("Товаров на складе: " + product);
           // сигнализируем
           condition.signalAll();
-      }
-      catch (InterruptedException e){
+      } catch (InterruptedException e) {
           System.out.println(e.getMessage());
-      }
-      finally{
+      } finally {
           locker.unlock();
       }
    }
 }
+
 // класс Производитель
-class Producer implements Runnable{
-  
+class Producer implements Runnable {
     Store store;
-    Producer(Store store){
-       this.store=store; 
+
+    Producer(Store store) {
+       this.store = store; 
     }
-    public void run(){
+
+    public void run() {
         for (int i = 1; i < 6; i++) {
             store.put();
         }
     }
 }
+
 // Класс Потребитель
-class Consumer implements Runnable{
-      
-     Store store;
-    Consumer(Store store){
-       this.store=store; 
+class Consumer implements Runnable {
+    Store store;
+
+    Consumer(Store store) {
+       this.store = store; 
     }
-    public void run(){
+
+    public void run() {
         for (int i = 1; i < 6; i++) {
             store.get();
         }
     }
 }
+```
+
 В итоге мы получим вывод наподобие следующего:
 
+```out
 Производитель добавил 1 товар
 Товаров на складе: 1
 Производитель добавил 1 товар
@@ -244,3 +156,4 @@ class Consumer implements Runnable{
 Товаров на складе: 1
 Покупатель купил 1 товар
 Товаров на складе: 0
+```
