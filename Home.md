@@ -112,8 +112,3 @@
     1. [Класс File. Работа с файлами и каталогами](класс-file)
     1. [Работа с ZIP-архивами](работа-с-zip-архивами)
     1. [Класс Console](класс-console)
-1. Сетевое взаимодействие
-    1. [Сетевое взаимодействие](сетевое-взаимодействие)
-    1. [InetAddress](inetaddress)
-    1. [Socket. ServerSocket](socket.-serversocket)
-    1. [DatagramSocket. DatagramPacket](datagramsocket.-datagrampacket)
