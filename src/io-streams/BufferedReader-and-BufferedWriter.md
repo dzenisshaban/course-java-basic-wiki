@@ -8,6 +8,7 @@
 В качестве параметра он принимает поток вывода, в который надо осуществить запись. Второй параметр указывает на размер буфера.
 
 Например, осуществим запись в файл:
+
 ```java
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -25,6 +26,7 @@ public class Program {
 }
 ```
 
+
 ## Чтение текста и `BufferedReader`
 Класс `BufferedReader` считывает текст из символьного потока ввода, буферизируя прочитанные символы. Использование буфера призвано увеличить производительность чтения данных из потока.
 
@@ -37,6 +39,7 @@ public class Program {
 Так как `BufferedReader` наследуется от класса `Reader`, то он может использовать все те методы для чтения из потока, которые определены в `Reader`. И также `BufferedReader` определяет свой собственный метод `readLine()`, который позволяет считывать из потока построчно.
 
 Рассмотрим применение `BufferedReader`:
+
 ```java
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -58,6 +61,7 @@ public class Program {
 ```
 
 Также можно считать текст построчно:
+
 ```java
 try (BufferedReader br = new BufferedReader(new FileReader("notes4.txt"))) {
     //чтение построчно
@@ -73,6 +77,7 @@ try (BufferedReader br = new BufferedReader(new FileReader("notes4.txt"))) {
 
 ## Считывание с консоли в файл
 Соединим оба класса `BufferedReader` и `BufferedWriter` для считывания с консоли в файл. Для этого определим следующий код программы:
+
 ```java
 import java.io.*;
 

@@ -8,12 +8,13 @@
 В качестве параметров конструкторы используют массив байтов `buf`, из которого производится считывание, смещение относительно начала массива `offset` и количество считываемых символов `length`.
 
 Считаем массив байтов и выведем его на экран:
+
 ```java
 import java.io.ByteArrayInputStream;
 
 public class Program {
     public static void main(String[] args) {
-        byte[] array1 = new byte[]{1, 3, 5, 7};
+        byte[] array1 = new byte[] {1, 3, 5, 7};
         ByteArrayInputStream byteStream1 = new ByteArrayInputStream(array1);
         int b;
         while ((b = byteStream1.read()) != -1) {
@@ -43,6 +44,7 @@ public class Program {
 Первая версия создает массив для хранения байтов длиной в *32 байта*, а вторая версия создает массив длиной `size`.
 
 Рассмотрим применение класса:
+
 ```java
 import java.io.ByteArrayOutputStream;
 
@@ -68,11 +70,12 @@ public class Program {
 
 Как и в других потоках вывода в классе `ByteArrayOutputStream` определен метод `write()`, который записывает в поток некоторые данные. В данном случае мы записываем в поток массив байтов. Этот массив байтов записывается в объекте `ByteArrayOutputStream` в защищенное поле `buf`, которое представляет также массив байтов `(protected byte[] buf)`.
 
-Так как метод `write()` может сгенерировать исключение, то вызов этого метода помещается в блок `try..catch`.
+Так как метод `write()` может сгенерировать исключение, то вызов этого метода помещается в блок `try...catch`.
 
 Используя методы `toString()` и `toByteArray()`, можно получить массив байтов `buf` в виде текста или непосредственно в виде массива байт.
 
 С помощью метода `writeTo()` мы можем вывести массив байт в другой поток. Данный метод в качестве параметра принимает объект `OutputStream`, в который производится запись массива байт:
+
 ```java
 ByteArrayOutputStream baos = new ByteArrayOutputStream();
 String text = "Hello Wolrd!";

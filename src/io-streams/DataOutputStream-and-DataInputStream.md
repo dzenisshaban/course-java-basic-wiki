@@ -1,5 +1,6 @@
 Классы `DataOutputStream` и `DataInputStream` позволяют записывать и считывать данные примитивных типов.
 
+
 ## Запись данных и `DataOutputStream`
 Класс `DataOutputStream` представляет поток вывода и предназначен для записи данных примитивных типов. Для записи каждого из примитивных типов предназначен свой метод:
 - `writeBoolean(boolean v)` записывает в поток булевое однобайтовое значение
@@ -11,6 +12,7 @@
 - `writeLong(long v)` записывает в поток значение `long`
 - `writeShort(int v)` записывает в поток значение `short`
 - `writeUTF(String str)` записывает в поток строку в кодировке `UTF-8`
+
 
 ## Считывание данных и DataInputStream
 Класс `DataInputStream` действует противоположным образом - он считывает из потока данные примитивных типов. Соответственно для каждого примитивного типа определен свой метод для считывания:
@@ -27,6 +29,7 @@
 - `int skipBytes(int n)` пропускает при чтении из потока n байтов
 
 Рассмотрим применение классов на примере:
+
 ```java
 import java.io.*;
 
@@ -50,14 +53,15 @@ public class Program {
             int age = dos.readInt();
             double height = dos.readDouble();
             boolean married = dos.readBoolean();
-            System.out.printf("Name: %s  Age: %d  Height: %f  Married: %b",
-                    name, age, height, married);
+            System.out.printf("Name: %s  Age: %d  Height: %f  Married: %b", name, age, height, married);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
     }
 }
+```
 
+```java
 class Person {
     public String name;
     public int age;
@@ -75,6 +79,6 @@ class Person {
 
 Здесь мы последовательно записываем в файл данные объекта `Person`.
 
-Объект `DataOutputStream` в конструкторе принимает поток вывода: `DataOutputStream (OutputStream out)`. В данном случае в качестве потока вывода используется объект `FileOutputStream`, поэтому вывод будет происходить в файл. И с помощью выше рассмотренных методов типа `writeUTF()` производится запись значений в бинарный файл.
+Объект `DataOutputStream` в конструкторе принимает поток вывода: `DataOutputStream(OutputStream out)`. В данном случае в качестве потока вывода используется объект `FileOutputStream`, поэтому вывод будет происходить в файл. И с помощью выше рассмотренных методов типа `writeUTF()` производится запись значений в бинарный файл.
 
 Затем происходит чтение ранее записанных данных. Объект `DataInputStream` в конструкторе принимает поток для чтения: `DataInputStream(InputStream in)`. Здесь таким потоком выступает объект `FileInputStream`.

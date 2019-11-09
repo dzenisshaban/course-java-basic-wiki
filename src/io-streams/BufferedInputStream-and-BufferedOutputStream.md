@@ -9,6 +9,7 @@
 Первый параметр - это поток ввода, с которого данные будут считываться в буфер. Второй параметр - размер буфера.
 
 Например, буферизируем считывание данных из потока `ByteArrayInputStream`:
+
 ```java
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
@@ -45,9 +46,10 @@ public class Program {
 - `BufferedOutputStream(OutputStream outputStream)`
 - `BufferedOutputStream(OutputStream outputStream, int bufSize)`
 
-Первый параметр - это поток вывода, который унаследован от `OutputStream`, а второй параметр - размер буфера.
+`outputStream` - это поток вывода, который унаследован от `OutputStream`, а `bufSize` - размер буфера.
 
 Рассмотрим на примере записи в файл:
+
 ```java
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;

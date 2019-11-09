@@ -1,6 +1,7 @@
 Специально для работы с консолью в Java определен класс `Console`, который хранится в пакете `java.io`. Он не получает консольный ввод-вывод сам по себе, а использует уже имеющиеся потоки `System.in` и `System.out`. Но в то же время `Console` значительно упрощает ряд операций, связанных с консолью.
 
 Для получения объекта консоли надо вызвать статический метод `System.console()`:
+
 ```java
 Console console = System.console();
 ```
@@ -13,6 +14,7 @@ Console console = System.console();
 - `char[] readPassword()` считывает с консоли введенную пользователем строку, при этом символы строки не отображаются на консоли
 
 Используем класс `Console`:
+
 ```java
 import java.io.Console;
 
@@ -24,7 +26,6 @@ public class Program {
             // считываем данные с консоли
             String login = console.readLine("Введите логин:");
             char[] password = console.readPassword("Введите пароль:");
-
             console.printf("Введенный логин: %s \n", login);
             console.printf("Введенный пароль: %s \n", new String(password));
         }

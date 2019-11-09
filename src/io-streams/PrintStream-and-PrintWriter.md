@@ -20,6 +20,7 @@
 - `printf()` форматированный вывод
 
 Например, запишем информацию в файл:
+
 ```java
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -44,6 +45,7 @@ public class Program {
 В качестве потока вывода используется объект `FileOutputStream`. С помощью метода `println()` производится запись информации в выходной поток - то есть в объект `FileOutputStream`. (В случае с выводом на консоль с помощью `System.out.println()` в качестве потока вывода выступает консоль)
 
 Кроме того, как и любой поток вывода и наследник класса `OutputStream` он имеет метод `write()`:
+
 ```java
 import java.io.IOException;
 import java.io.PrintStream;
@@ -66,7 +68,8 @@ public class Program {
 ```
 
 После выполнения этой программы получится файл со следующим содержанием:
-```text
+
+```out
 Hello World!Welcome to Java!
 Name: Tom Age: 34 
 PrintStream
@@ -89,6 +92,7 @@ PrintStream
 Для записи данных в поток он также используется методы `printf()` и `println()`.
 
 Например, применим данный класс для вывода на консоль:
+
 ```java
 try (PrintWriter pw = new PrintWriter(System.out)) {
     pw.println("Hello world!");

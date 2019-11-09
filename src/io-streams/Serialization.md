@@ -11,6 +11,7 @@
 Для сериализации объектов в поток используется класс `ObjectOutputStream`. Он записывает данные в поток.
 
 Для создания объекта `ObjectOutputStream` в конструктор передается поток, в который производится запись:
+
 ```java
 ObjectOutputStream(OutputStream out)
 ```
@@ -34,6 +35,7 @@ ObjectOutputStream(OutputStream out)
 Эти методы охватывают весь спектр данных, которые можно сериализовать.
 
 Например, сохраним в файл один объект класса `Person`:
+
 ```java
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
@@ -84,6 +86,7 @@ class Person implements Serializable {
 
 ## Десериализация. Класс `ObjectInputStream`
 Класс `ObjectInputStream` отвечает за обратный процесс - чтение ранее сериализованных данных из потока. В конструкторе он принимает ссылку на поток ввода:
+
 ```java
 ObjectInputStream(InputStream in)
 ```
@@ -106,6 +109,7 @@ ObjectInputStream(InputStream in)
 - `Object readObject()` считывает из потока объект
 
 Например, извлечем выше сохраненный объект `Person` из файла:
+
 ```java
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
@@ -123,6 +127,7 @@ public class Program {
 ```
 
 Теперь совместим сохранение и восстановление из файла на примере списка объектов:
+
 ```java
 import java.io.*;
 import java.util.ArrayList;
@@ -156,7 +161,9 @@ public class Program {
         }
     }
 }
+```
 
+```java
 class Person implements Serializable {
     private String name;
     private int age;
@@ -191,6 +198,7 @@ class Person implements Serializable {
 
 ## Исключение данных из сериализации
 По умолчанию сериализуются все переменные объекта. Однако, возможно, мы хотим, чтобы некоторые поля были исключены из сериализации. Для этого они должны быть объявлены с модификатором `transient`. Например, исключим из сериализации объекта `Person` переменные `height` и `married`:
+
 ```java
 import java.io.Serializable;
 

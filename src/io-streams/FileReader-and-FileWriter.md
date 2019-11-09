@@ -14,6 +14,7 @@
 Так, в конструктор передается либо путь к файлу в виде строки, либо объект `File`, который ссылается на конкретный текстовый файл. Параметр `append` указывает, должны ли данные дозаписываться в конец файла (если параметр равен `true`), либо файл должен перезаписываться.
 
 Запишем в файл какой-нибудь текст:
+
 ```java
 import java.io.FileWriter;
 import java.io.IOException;
@@ -45,6 +46,7 @@ public class Program {
 - `FileReader(FileDescriptor fd)`
 
 А используя методы, определенные в базом классе `Reader`, произвести чтение файла:
+
 ```java
 import java.io.FileReader;
 import java.io.IOException;
@@ -65,6 +67,7 @@ public class Program {
 ```
 
 Также мы можем считывать в промежуточный буфер из массива символов:
+
 ```java
 import java.io.FileReader;
 import java.io.IOException;

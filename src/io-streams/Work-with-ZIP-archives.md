@@ -3,6 +3,7 @@
 
 ## `ZipOutputStream`. Запись архивов
 Для создания архива используется класс `ZipOutputStream`. Для создания объекта `ZipOutputStream` в его конструктор передается поток вывода:
+
 ```java
 ZipOutputStream(OutputStream out)
 ```
@@ -10,6 +11,7 @@ ZipOutputStream(OutputStream out)
 Для записи файлов в архив для каждого файла создается объект `ZipEntry`, в конструктор которого передается имя архивируемого файла. А чтобы добавить каждый объект `ZipEntry` в архив, применяется метод `putNextEntry()`.
 
 Создадим архив:
+
 ```java
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -42,11 +44,13 @@ public class Program {
 
 ## Чтение архивов. `ZipInputStream`
 Для чтения архивов применяется класс `ZipInputStream`. В конструкторе он принимает поток, указывающий на zip-архив:
+
 ```java
 ZipInputStream(InputStream in)
 ```
 
 Для считывания файлов из архива `ZipInputStream` использует метод `getNextEntry()`, который возвращает объект `ZipEntry`. Объект `ZipEntry` представляет отдельную запись в zip-архиве. Например, считаем какой-нибудь архив:
+
 ```java
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
