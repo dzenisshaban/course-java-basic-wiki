@@ -33,11 +33,12 @@
     1. [Абстрактные классы](abstract-classes)
     1. [Интерфейсы](interfaces)
     1. [Клонирование объектов](cloning-objects)
+    1. [Перечисления](enum)
+1. [Обработка исключений](exception-handling)
+1. Обобщения
     1. [Обобщения](generics)
     1. [Ограничения обобщений](wildcard-for-generics)
     1. [Наследование и обобщения](inheritance-and-generics)
-    1. [Перечисления](enum)
-1. [Обработка исключений](exception-handling)
 1. Коллекции
     1. [Типы коллекций. Интерфейс Collection](interface-collection)
     1. [Класс ArrayList и интерфейс List](interface-list-and-class-arraylist)
