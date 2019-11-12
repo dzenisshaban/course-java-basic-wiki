@@ -50,6 +50,10 @@
     1. [Интерфейс Map и класс HashMap](interface-map-and-class-hashmap)
     1. [Интерфейсы SortedMap и NavigableMap. Класс TreeMap](interfaces-sortedmap-navigablemap-and-class-treemap)
     1. [Итераторы](interface-iterator)
+1. Классы-оболочки
+    1. [Классы-оболочки](wrapper-classes)
+    1. [Автоупаковка](boxing)
+    1. [Автоупаковка и перегрузка методов](boxing-and-overloading)
 1. [Аннотации](annotations)
 1. Лямбда-выражения
     1. [Введение в лямбда-выражения](intro-to-lambda-expressions)
