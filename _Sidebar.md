@@ -17,7 +17,6 @@
     1. [Циклы](loops)
     1. [Методы](methods)
     1. [Массивы](arrays)
-    1. [Работа со строками](strings)
 1. Объектно-ориентированное программирование
     1. [Концепции ООП](oop-concepts)
     1. [Классы и объекты](classes-and-objects)
@@ -34,6 +33,11 @@
     1. [Интерфейсы](interfaces)
     1. [Клонирование объектов](cloning-objects)
     1. [Перечисления](enum)
+1. Строки
+    1. [Класс String](class-string)
+    1. [StringBuffer и StringBuilder](stringbuffer-and-stringbuilder)
+    1. [Форматирование строк](string-formatting)
+    1. [Регулярные выражения](regular-expression)
 1. [Обработка исключений](exception-handling)
 1. Обобщения
     1. [Обобщения](generics)
