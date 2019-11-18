@@ -60,7 +60,7 @@ public class Program {
             System.out.printf("Key: %d  Value: %s \n", item.getKey(), item.getValue());
         }
         // получим весь набор ключей
-        Set<Integer> `k`eys = states.`k`eySet();
+        Set<Integer> keys = states.keySet();
         // получить набор всех значений
         Collection<String> values = states.values();
 
@@ -73,12 +73,12 @@ public class Program {
         // получим последний элемент дерева
         Map.Entry<Integer, String> lastItem = states.lastEntry();
 
-        System.out.printf("Last item has `k`ey %d value %s \n", lastItem.getKey(), lastItem.getValue());
+        System.out.printf("Last item has key %d value %s \n", lastItem.getKey(), lastItem.getValue());
 
         Map<String, Person> people = new TreeMap<String, Person>();
         people.put("1240i54", new Person("Tom"));
         people.put("1564i55", new Person("Bill"));
-        people.put("4540i56", new Person("Nic`k`"));
+        people.put("4540i56", new Person("Nick"));
 
         for (Map.Entry<String, Person> item : people.entrySet()) {
             System.out.printf("Key: %s  Value: %s \n", item.getKey(), item.getValue().getName());
