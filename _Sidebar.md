@@ -1,9 +1,10 @@
-## Theory
-### Common
+## Common
+1. [IntelliJ IDEA](intellij-idea)
 1. [Code Convention](code-convention)
+1. [Checkstyle IDEA plugin](сheckstyle-idea-plugin)
 
 
-### Java
+## Java
 1. [Введение](intro-to-java)
 1. [Первая программа](first-program-with-java)
 1. Основы программирования

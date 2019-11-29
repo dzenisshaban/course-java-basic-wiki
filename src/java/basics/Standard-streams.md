@@ -107,7 +107,7 @@ public class FirstApp {
 ```
 
 Например, если бы мы запускали проект в **IntelliJ IDEA**, то это выглядело бы так:
-![](res/img/console-output.png)
+![](res/img/java/basics/console-output.png)
 
 
 ## Проблема с кириллическими символами
@@ -116,4 +116,4 @@ public class FirstApp {
 Первый способ заключается в выборе кодировке в самой IDE. Для этого перейдем в меню *File -> Setting* или hotkey `Ctrl+Alt+S`.
 
 Нам откроется окно настроек проекта, где в самом низу нам надо выбрать вместо кодировки по умолчанию `UTF-8` кодировку `windows-1251`:
-![](res/img/problem-encoding.png)
+![](res/img/java/basics/problem-encoding.png)
