@@ -8,10 +8,6 @@
 - [Settings](settings)
 
 
-## Documentation
-- [Java Code Style](java-code-style)
-
-
 ## Useful links
 - [RegEx](https://javarush.ru/groups/posts/regulyarnye-vyrazheniya-v-java)
 - [Стек и куча в Java](https://topjava.ru/blog/stack-and-heap-in-java)
@@ -19,10 +15,7 @@
 
 ## Theory
 ### Common
-1. [Системы счисления](number-systems)
-1. [Рекурсия](recursion)
 1. [Code Convention](code-convention)
-1. [Структуры данных](data-structures)
 
 
 ### Java
@@ -90,20 +83,6 @@
     1. [Класс Phaser](class-phaser)
     1. [Блокировки. ReentrantLock](locks-and-reentrantlock)
     1. [Условия в блокировках](interface-condition)
-1. Потоки ввода-вывода. Работа с файлами
-    1. [Потоки ввода-вывода](inputstream-and-outputstream)
-    1. [FileInputStream и FileOutputStream](fileinputstream-and-fileoutputstream)
-    1. [Закрытие потоков](closing-streams)
-    1. [ByteArrayInputStream и ByteArrayOutputStream](bytearrayinputstream-and-bytearrayoutputstream)
-    1. [BufferedInputStreamи BufferedOutputStream](bufferedinputstream-and-bufferedoutputstream)
-    1. [PrintStream и PrintWriter](printstream-and-printwriter)
-    1. [DataOutputStream и DataInputStream](dataoutputstream-and-datainputstream)
-    1. [FileReader и FileWriter](filereader-and-filewriter)
-    1. [BufferedReader и BufferedWriter](bufferedreader-and-bufferedwriter)
-    1. [Сериализация объектов](serialization)
-    1. [Класс File. Работа с файлами и каталогами](class-file)
-    1. [Работа с ZIP-архивами](work-with-zip-archives)
-    1. [Класс Console](class-console)
 1. Лямбда-выражения
     1. [Введение в лямбда-выражения](intro-to-lambda-expressions)
     1. [Лямбды как параметры и результаты методов](lambdas-as-parameters-and-methods-results)
@@ -122,6 +101,20 @@
     1. [Группировка](class-collectors)
     1. [Параллельные потоки](stream-and-parallel)
     1. [Параллельные операции над массивами](arrays-and-parallel-operations)
+1. Потоки ввода-вывода. Работа с файлами
+    1. [Потоки ввода-вывода](inputstream-and-outputstream)
+    1. [FileInputStream и FileOutputStream](fileinputstream-and-fileoutputstream)
+    1. [Закрытие потоков](closing-streams)
+    1. [ByteArrayInputStream и ByteArrayOutputStream](bytearrayinputstream-and-bytearrayoutputstream)
+    1. [BufferedInputStreamи BufferedOutputStream](bufferedinputstream-and-bufferedoutputstream)
+    1. [PrintStream и PrintWriter](printstream-and-printwriter)
+    1. [DataOutputStream и DataInputStream](dataoutputstream-and-datainputstream)
+    1. [FileReader и FileWriter](filereader-and-filewriter)
+    1. [BufferedReader и BufferedWriter](bufferedreader-and-bufferedwriter)
+    1. [Сериализация объектов](serialization)
+    1. [Класс File. Работа с файлами и каталогами](class-file)
+    1. [Работа с ZIP-архивами](work-with-zip-archives)
+    1. [Класс Console](class-console)
 1. [Дата и время](datetime)
     1. [Класс `LocalDate`](class-localdate)
     1. [Класс `LocalTime`](class-localtime)
