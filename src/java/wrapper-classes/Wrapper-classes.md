@@ -148,7 +148,7 @@ public class WrapperToXString {
 ## Класс `Number`
 Все оболочки числовых типов наследуют абстрактный класс `Number`. `Number` объявляет методы, которые возвращают значение объекта в каждом из различных числовых форматов.
 
-![Класс Number](res/img/wrapper-classes.png)
+![Класс Number](res/img/java/wrapper-classes/wrapper-classes.png)
 
 Пример приведения типов
 

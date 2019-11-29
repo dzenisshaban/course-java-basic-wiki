@@ -182,7 +182,7 @@ public Person clone() throws CloneNotSupportedException {
 ```
 
 В итоге получается следующая иерархия исключений:
-![Exceptions](res/img/exceptions.png)
+![Exceptions](res/img/java/exceptions.png)
 
 Поскольку все классы исключений наследуются от класса `Exception`, то все они наследуют ряд его методов, которые позволяют получить информацию о характере исключения. Среди этих методов отметим наиболее важные:
 - `getMessage()` возвращает сообщение об исключении

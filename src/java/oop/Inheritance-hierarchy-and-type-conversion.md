@@ -72,7 +72,7 @@ class Client extends Person {
 
 В этой иерархии классов можно проследить следующую цепь наследования: `Object` -> `Person` -> `Employee`|`Client`.
 
-![hierarhy classes](res/img/hierarhy-classes.png)
+![hierarhy classes](res/img/java/oop/hierarhy-classes.png)
 
 
 ## Преобразование типов в языке Java
