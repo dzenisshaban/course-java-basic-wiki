@@ -124,3 +124,4 @@
     1. [Класс `DateTimeFormatter`](class-datetimeformatter)
 1. [Java Regex](regular-expression)
 1. [Java Reflection](reflection-api)
+1. [Modularity](modularity)
