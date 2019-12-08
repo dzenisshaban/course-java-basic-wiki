@@ -1,121 +1,281 @@
-## Вложенные классы
-Классы могут быть **вложенными** (**nested**), то есть могут быть определены внури других классов.
+# Вложенные классы
+**Вложенные классы** (**nested class**) - это классы определенные внутри другого класса. *Область действия вложенного класса* ограничена областью действия внешнего класса. Если класс В определен в классе А, то класс B не может существовать независимо от класса А. *Вложенный класс* имеет доступ к членам (в том числе `private`) того класса, в который он объявлен.
 
-![Nested Class](res/img/java/nested-class.png)
+**Типы вложенных классов**:
+- **Обычный внутренний класс** (**regular inner class** or **member class**).
+- **Локальный класс** (**method-local inner class**).
+- **Анонимный класс** (**anonymous inner class**).
+- **Статический вложенный класс** (**static nested class**).
 
-Частным случаем вложенных классов являются **внутренние классы** (**inner class**). Например, имеется класс `Person`, внутри которого определен класс `Account`:
+![Nested Classes](res/img/java/nested-classes.png)
+
+
+## Обычный внутренний класс
+**Внутренний класс** (**inner class**) определяется в области действия внешнего класса.
+
+Чтобы создать объект внутреннего класса, должен существовать объект внешнего класса.
+
+Внутренний и внешний класс имеют доступ ко всем членам класса друг друга (даже `private`).
+
+Следующий пример демонстрирует объявление обычного внутреннего класса:
+
 ```java
-public class Program {
+public class Town {
+    private String postCode = "33333";
+
+    public class Street {
+        private int house;
+
+        public void printAddress() {
+            System.out.println("Город " + Town.this);
+            System.out.println("Индекс " + postCode);
+            System.out.println("Улица " + this);
+            System.out.println("Дом " + house);
+        }
+    }
+
+    public void createStreet() {
+        Street street = new Street();
+        street.house = 78;
+        street.printAddress();
+    }
+
     public static void main(String[] args) {
-        Person tom = new Person("Tom", "qwerty");
-        tom.displayPerson();
-        tom.account.displayAccount();
-    }
-}
-
-class Person {
-    private String name;
-    Account account;
-
-    Person(String name, String password) {
-        this.name = name;
-        account = new Account(password);
-    }
-
-    public void displayPerson() {
-        System.out.printf("Person \t Name: %s \t Password: %s \n", name, account.password);
-    }
-
-    public class Account {
-        private String password;
-
-        Account(String pass) {
-            this.password = pass;
-        }
-
-        void displayAccount() {
-            System.out.printf("Account Login: %s \t Password: %s \n", Person.this.name, password);
-        }
+        Town town = new Town();
+        town.createStreet();
+        Town.Street street1 = town.new Street();
+        Town.Street street2 = new Town().new Street();
+        street1.printAddress();
+        street2.printAddress();
     }
 }
 ```
 
-Внутренний класс ведет себя как обычный класс за тем исключением, что его объекты могут быть созданы только внутри внешнего класса.
-
-Внутренний класс имеет доступ ко всем полям внешнего класса, в том числе закрытым с помощью модификатора `private`. Аналогично внешний класс имеет доступ ко всем членам внутреннего класса, в том числе к полям и методам с модификатором `private`.
-
-Ссылку на объект внешнего класса из внутреннего класса можно получить с помощью выражения `Внешний_класс.this`, например, `Person.this`.
-
-Объекты внутренних классов могут быть созданы только в том классе, в котором внутренние классы опеределены. В других внешних классах объекты внутреннего класса создать нельзя.
-
-Еще одной особенностей внутренних классов является то, что их можно объявить внутри любого контекста, в том числе внутри метода и даже в цикле:
+Внутри метода внешнего класса, объект внутреннего класса создается как обычно:
 
 ```java
-public class Program {
-    public static void main(String[] args) {
-        Person tom = new Person("Tom");
-        tom.setAccount("qwerty");
-    }
-}
+Street street = new Street();
+```
 
-class Person {
-    private String name;
+Если мы создаем объект внутреннего класса не в методах внешнего класса или в статических методах внешнего класса, необходимо использовать объект внешнего класса:
 
-    Person(String name) {
-        this.name = name;
-    }
+```java
+new Town().new Street();
+// or
+town.new Street();
+```
 
-    public void setAccount(String password) {
-        class Account {
-            void display() {
-                System.out.printf("Account Login: %s \t Password: %s \n", name, password);
+Если необходимо получить ссылку на внутренний класс во внутреннем классе, используем слово `this`:
+
+```java
+System.out.println("Street is " + this);
+```
+
+Если необходимо получить ссылку на объект внешнего класса, запишите имя внешнего класса, за которым следует точка, а затем ключевое слово `this`:
+
+```java
+System.out.println("Town is " + Town.this);
+```
+
+Обычный внутренний класс является таким же членом внешнего класса, как и переменные и методы. Следующие модификаторы могут быть применены к обычному внутреннему классу:
+- `final`
+- `abstract`
+- `public`
+- `private`
+- `protected`
+- `static` – но static преобразует его во вложенный класс
+- `strictfp`
+
+Если метод описан как `strictfp` (явно либо неявно), то JVM гарантирует, что результаты вычисления выражений с `double` и `float` в пределах метода будут одинаковыми на всех платформах. Модификатор `strictfp` для класса и интерфейса указывает на то, что все методы класса/интерфейса будут `strictfp`.
+
+
+## Локальный класс Java 
+**Локальный класс** (**local class**) определяется в блоке Java кода. На практике чаще всего объявление происходит в методе некоторого другого класса. Как и *inner classes*, локальные классы ассоциируются с экземпляром внешнего класса и имеют доступ к его полям и методам.
+
+Локальный класс может обращаться к локальным переменным и параметрам метода, если они объявлены с модификатором `final` или являются **effective final** (начиная с Java 8).
+
+**Effective final переменная** это переменная, которая не объявлена явно как `final`, но ее значение не меняется.
+
+Экземпляр класса может быть создан внутри того же метода, что и класс, но ниже объявления класса.
+
+Локальные классы не могут быть объявлены как:
+- `private`
+- `public`
+- `protected`
+- `static`
+
+Они не могут иметь внутри себя статических объявлений (полей, методов, классов). Исключением являются константы (`static final`).
+
+Локальные классы могут быть объявлены как `abstract` или `final`.
+
+Рассмотрим пример объявления локального класса:
+
+```java
+public class Town2 {
+    private String postCode = "33333";
+
+    public void createAddress() {
+        final int houseNumber = 34;
+        class Street {
+            public void printAddress() {
+                System.out.println("PostCode is " + postCode);
+                System.out.println("House Number is " + houseNumber);
             }
         }
-        Account account = new Account();
-        account.display();
+        Street street = new Street();
+        street.printAddress();
+    }
+
+    public static void main(String[] args) {
+        Town2 town = new Town2();
+        town.createAddress();
+    }
+}
+```
+
+Если локальный класс объявлен внутри статического метода, он имеет доступ только к статическим переменным класса:
+
+```java
+public class Town3 {
+    private static String postCode = "33333";
+
+    public static void createAddress() {
+        final int houseNumber = 34;
+        class Street {
+            public void printAddress() {
+                System.out.println("PostCode is " + postCode);
+                System.out.println("House Number is " + houseNumber);
+            }
+        }
+        Street street = new Street();
+        street.printAddress();
+    }
+
+    public static void main(String[] args) {
+        Town3.createAddress();
     }
 }
 ```
 
 
-## Статические вложенные классы
-Кроме внутренних классов также могут статические вложенные классы. Статические вложенные классы позволяют скрыть некоторую комплексную информацию внутри внешнего класса:
+## Анонимный класс
+**Анонимный класс** (**anonymous class**) - это локальный класс без имени. Используется тогда, когда нужно переопределить метод класса или интерфейса. Класс одновременно объявляется и инициализируется.
+
+Они могут быть объявлены не только в методе, но и внутри аргумента метода.
+
+Рассмотрим пример анонимного класса:
 
 ```java
-class Math {
-    public static class Factorial {
-        private int result;
-        private int key;
-
-        public Factorial(int number, int x) {
-            this.result = number;
-            this.key = x;
-        }
-
-        public int getResult() {
-            return this.result;
-        }
-
-        public int getKey() {
-            return this.key;
-        }
-    }
-
-    public static Factorial getFactorial(int x) {
-        int result = 1;
-        for (int i = 1; i <= x; i++) {
-            result *= i;
-        }
-        return new Factorial(result, x);
+public class Potato {
+    public void peel() {
+        System.out.println("Чистим картошку.");
     }
 }
 ```
 
-Здесь определен вложенный класс для хранения данных о вычислении факториала. Основные действия выполняет метод `getFactorial()`, который возвращает объект вложенного класса. И теперь используем классы в методе `main()`:
+```java
+public class Food {
+    public static void main(String[] args) {
+        Potato potato = new Potato() {
+            @Override
+            public void peel() {
+                System.out.println("Чистим картошку в анонимном классе.");
+            }
+        };
+        potato.peel();
+    }
+}
+```
+
+Анонимный класс может не только переопределить методы класса наследника, но и добавить новые методы. Но новые методы НЕ могут быть вызваны извне анонимного класса:
 
 ```java
-public static void main(String[] args) {
-    Math.Factorial fact = Math.getFactorial(6);
-    System.out.printf("Факториал числа %d равен %d \n", fact.getKey(), fact.getResult());
+public class AnotherFood {
+    public static void main(String[] args) {
+        Potato potato = new Potato() {
+            public void fry() {
+                System.out.println("Жарим картошку в анонимном классе.");
+            }
+
+            @Override
+            public void peel() {
+                System.out.println("Чистим картошку в анонимном классе.");
+                fry();
+            }
+        };
+        potato.peel();
+        //Ошибка компиляции
+        //potato.fry();
+    }
+}
+```
+
+Случаи использования анонимного класса:
+- Тело класса является очень коротким.
+- Нужен только один экземпляр класса.
+- Класс используется в месте его создания или сразу после него.
+- Имя класса не важно и не облегчает понимание кода.
+
+Анонимный класс могут также расширять интерфейс:
+
+```java
+public interface Moveable {
+    void moveRight();
+    void moveLeft();
+}
+```
+
+```java
+public class MoveableDemo {
+    public static void main(String[] args) {
+        Moveable moveable = new Moveable() {
+            @Override
+            public void moveRight() {
+                System.out.println("MOVING RIGHT!!!");
+            }
+
+            @Override
+            public void moveLeft() {
+                System.out.println("MOVING LEFT!!!");
+            }
+        };
+        moveable.moveRight();
+        moveable.moveLeft();
+    }
+}
+```
+
+
+## Статический вложенный класс
+**Статический вложенный класс** (**static nested class**) – это внутренний класс объявленный с модификатором `static`.
+
+Статический вложенный класс не имеет доступа к нестатическим полям и методам внешнего класса. Доступ к нестатическим полям и методам может осуществляться только через ссылку на экземпляр внешнего класса. В этом плане `static` nested классы очень похожи на любые другие классы верхнего уровня.
+
+Рассмотрим примеры объявления статических вложенных классов:
+
+```java
+public class Town4 {
+    public static class Street {
+        public void go() {
+            System.out.println("Go to the Street.");
+        }
+    }
+}
+```
+
+```java
+public class City {
+    public static class District {
+        public void go() {
+            System.out.println("Go to the District.");
+        }
+    }
+
+    public static void main(String[] args) {
+        Town4.Street street = new Town4.Street();
+        street.go();
+        District district = new District();
+        district.go();
+    }
 }
 ```
