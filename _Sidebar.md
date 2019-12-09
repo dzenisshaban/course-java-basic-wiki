@@ -86,9 +86,6 @@
     1. [Группировка](class-collectors)
     1. [Параллельные потоки](stream-and-parallel)
     1. [Параллельные операции над массивами](arrays-and-parallel-operations)
-1. [Клонирование объектов](cloning-objects)
-1. [Перечисления](enum)
-1. Потоки ввода-вывода. Работа с файлами
     1. [Потоки ввода-вывода](inputstream-and-outputstream)
     1. [FileInputStream и FileOutputStream](fileinputstream-and-fileoutputstream)
     1. [Закрытие потоков](closing-streams)
@@ -110,3 +107,4 @@
     1. [Класс `Period`](class-period)
     1. [Класс `Duration`](class-duration)
     1. [Класс `DateTimeFormatter`](class-datetimeformatter)
+1. [Reflection API](reflection-api)

@@ -121,3 +121,4 @@
     1. [Класс `Period`](class-period)
     1. [Класс `Duration`](class-duration)
     1. [Класс `DateTimeFormatter`](class-datetimeformatter)
+1. [Reflection API](reflection-api)
