@@ -40,6 +40,7 @@
     1. [Интерфейсы](interfaces)
     1. [Класс `Object`](class-object)
     1. [Статические члены и модификатор `static`](static-members-and-static-modifier)
+1. [Документирование кода](javadoc)
 1. [Обработка исключений](exception-handling)
 1. Строки
     1. [Класс String](class-string)
