@@ -7,7 +7,7 @@
 ## Java
 1. [Введение](intro-to-java)
 1. [Первая программа](first-program-with-java)
-1. Основы программирования
+1. Java Procedure Programming
     1. [Типы данных и переменные](data-types-and-variables)
     1. [Консольный ввод и вывод](standard-streams)
     1. [Преобразование типов](base-data-type-conversions)
@@ -16,7 +16,8 @@
     1. [Циклы](loops)
     1. [Методы](methods)
     1. [Массивы](arrays)
-1. Объектно-ориентированное программирование
+    1. [String](string)
+1. Java Object-Oriented Programming
     1. [Концепции ООП](oop-concepts)
     1. [Классы и объекты](classes-and-objects)
     1. [Объекты как параметры методов](object-as-method-parameter)
@@ -27,24 +28,29 @@
     1. [Перегрузка методов](method-overloading)
     1. [Абстрактные классы](abstract-classes)
     1. [Интерфейсы](interfaces)
-    1. [Класс `Object`](class-object)
     1. [Статические члены и модификатор `static`](static-members-and-static-modifier)
-1. [Документирование кода](javadoc)
-1. [Обработка исключений](exception-handling)
-1. Строки
-    1. [Класс String](class-string)
-    1. [StringBuffer и StringBuilder](stringbuffer-and-stringbuilder)
-    1. [Форматирование строк](string-formatting)
-    1. [Регулярные выражения](regular-expression)
-1. Классы-оболочки
-    1. [Классы-оболочки](wrapper-classes)
-    1. [Автоупаковка](boxing)
-    1. [Автоупаковка и перегрузка методов](boxing-and-overloading)
-1. Обобщения
+1. Java Mics
+    1. [Перечисления](enum)
+    1. [Аннотации](annotations)
+    1. [Клонирование объектов](cloning-objects)
+    1. [Класс `Object`](class-object)
+    1. Классы-оболочки
+        1. [Классы-оболочки](wrapper-classes)
+        1. [Автоупаковка](boxing)
+        1. [Автоупаковка и перегрузка методов](boxing-and-overloading)
+    1. Строки
+        1. [StringBuffer и StringBuilder](stringbuffer-and-stringbuilder)
+        1. [Форматирование строк](string-formatting)
+    1. [Документирование кода](javadoc)
+    1. Лямбда-выражения
+        1. [Введение в лямбда-выражения](intro-to-lambda-expressions)
+        1. [Лямбды как параметры и результаты методов](lambdas-as-parameters-and-methods-results)
+1. [Java Exception Handling](exception-handling)
+1. Java Generics
     1. [Обобщения](generics)
     1. [Ограничения обобщений](wildcard-for-generics)
     1. [Наследование и обобщения](inheritance-and-generics)
-1. Коллекции
+1. Java Collections
     1. [Типы коллекций. Интерфейс Collection](interface-collection)
     1. [Интерфейс Iterator](interface-iterator)
     1. [Интерфейс List и класс ArrayList](interface-list-and-class-arraylist)
@@ -56,25 +62,9 @@
     1. [Интерфейсы SortedSet и NavigableSet. Класс TreeSet](interfaces-sortedset-navigableset-and-class-treeset)
     1. [Интерфейс Map и класс HashMap](interface-map-and-class-hashmap)
     1. [Интерфейсы SortedMap и NavigableMap. Класс TreeMap](interfaces-sortedmap-navigablemap-and-class-treemap)
-1. [Аннотации](annotations)
-1. [Вложенные классы](nested-classes)
-1. Лямбда-выражения
-    1. [Введение в лямбда-выражения](intro-to-lambda-expressions)
-    1. [Лямбды как параметры и результаты методов](lambdas-as-parameters-and-methods-results)
-    1. [Встроенные функциональные интерфейсы](functional-interfaces)
-1.  Многопоточное программирование
-    1. [Класс Thread](class-thread)
-    1. [Создание и выполнение потоков](creating-and-running-threads)
-    1. [Завершение и прерывание потока](termination-and-interruption-threads)
-    1. [Синхронизация потоков. Оператор synchronized](operator-synchronized)
-    1. [Взаимодействие потоков. Методы wait и notify](methods-wait-and-notify)
-    1. [Семафоры](semaphore)
-    1. [Обмен между потоками. Класс Exchanger](class-exchanger)
-    1. [Класс Phaser](class-phaser)
-    1. [Блокировки. ReentrantLock](locks-and-reentrantlock)
-    1. [Условия в блокировках](interface-condition)
-1. Stream API
+1. Java Functional Programming
     1. [Введение в Stream API](intro-to-stream-api)
+    1. [Встроенные функциональные интерфейсы](functional-interfaces)
     1. [Создание потока данных](creating-Stream)
     1. [Фильтрация, перебор элементов и отображение](filtering-mapping-foreaching)
     1. [Сортировка](stream-sorted)
@@ -87,6 +77,18 @@
     1. [Группировка](class-collectors)
     1. [Параллельные потоки](stream-and-parallel)
     1. [Параллельные операции над массивами](arrays-and-parallel-operations)
+1.  Java Concurrency
+    1. [Класс Thread](class-thread)
+    1. [Создание и выполнение потоков](creating-and-running-threads)
+    1. [Завершение и прерывание потока](termination-and-interruption-threads)
+    1. [Синхронизация потоков. Оператор synchronized](operator-synchronized)
+    1. [Взаимодействие потоков. Методы wait и notify](methods-wait-and-notify)
+    1. [Семафоры](semaphore)
+    1. [Обмен между потоками. Класс Exchanger](class-exchanger)
+    1. [Класс Phaser](class-phaser)
+    1. [Блокировки. ReentrantLock](locks-and-reentrantlock)
+    1. [Условия в блокировках](interface-condition)
+1. Java Input/Output
     1. [Потоки ввода-вывода](inputstream-and-outputstream)
     1. [FileInputStream и FileOutputStream](fileinputstream-and-fileoutputstream)
     1. [Закрытие потоков](closing-streams)
@@ -100,7 +102,7 @@
     1. [Класс File. Работа с файлами и каталогами](class-file)
     1. [Работа с ZIP-архивами](work-with-zip-archives)
     1. [Класс Console](class-console)
-1. [Дата и время](datetime)
+1. [Java Date and Time](datetime)
     1. [Класс `LocalDate`](class-localdate)
     1. [Класс `LocalTime`](class-localtime)
     1. [Класс `LocalDateTime`](class-localdatetime)
@@ -108,4 +110,5 @@
     1. [Класс `Period`](class-period)
     1. [Класс `Duration`](class-duration)
     1. [Класс `DateTimeFormatter`](class-datetimeformatter)
-1. [Reflection API](reflection-api)
+1. [Java Regex](regular-expression)
+1. [Java Reflection](reflection-api)

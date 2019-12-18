@@ -7,7 +7,7 @@
 - **Анонимный класс** (**anonymous inner class**).
 - **Статический вложенный класс** (**static nested class**).
 
-![Nested Classes](res/img/java/nested-classes.png)
+![Nested Classes](res/img/java/oop/nested-classes.png)
 
 
 ## Обычный внутренний класс
