@@ -94,6 +94,7 @@
     1. [Завершение и прерывание потока](termination-and-interruption-threads)
     1. [Синхронизация потоков. Оператор synchronized](operator-synchronized)
     1. [Взаимодействие потоков. Методы wait и notify](methods-wait-and-notify)
+1. Java Concurrent
     1. [Семафоры](semaphore)
     1. [Обмен между потоками. Класс Exchanger](class-exchanger)
     1. [Класс Phaser](class-phaser)
