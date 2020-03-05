@@ -1,4 +1,4 @@
-# `InputStream` and `OutputStream`
+# Java IO
 Отличительной чертой многих языков программирования является работа с файлами и потоками. В Java основной функционал работы с потоками сосредоточен в классах из пакета `java.io`.
 
 Ключевым понятием здесь является понятие **потока**. Хотя понятие "поток" в программировании довольно перегружено и может обозначать множество различных концепций. В данном случае применительно к работе с файлами и вводом-выводом будет говориться о **потоке** (**stream**), как об абстракции, которая используется для чтения или записи информации (файлов, сокетов, текста консоли и т.д.).
@@ -15,15 +15,22 @@
 
 Все остальные классы, работающие с потоками, являются наследниками этих абстрактных классов. Основные классы потоков:
 
-| InputStream | OutputStream | Reader | Writer |
-| :---: | :---: | :---: | :---: |
-| FileInputStream | FileOutputStream | FileReader | FileWriter |
-| BufferedInputStream | BufferedOutputStream | BufferedReader | BufferedWriter |
-| ByteArrayInputStream | ByteArrayOutputStream | CharArrayReader | CharArrayWriter |
-| FilterInputStream | FilterOutputStream | FilterReader | FilterWriter |
-| DataInputStream | DataOutputStream | | |
-| ObjectInputStream | ObjectOutputStream | | |
-
+||Byte Based || Character Based ||
+| :-: |-|-|-|-|
+|**Type**|**Input**|**Output**|**Input**|**Output**|
+|Basic|InputStream|OutputStream|Reader/InputStreamReader|Writer/OutputStreamWriter|
+|Arrays|ByteArrayInputStream|ByteArrayOutputStream|CharArrayReader|CharArrayWriter|
+|Files|FileInputStream|RandomAccessFile|FileOutputStream|RandomAccessFile|	FileReader	FileWriter
+|Pipes|PipedInputStream|PipedOutputStream|PipedReader|PipedWriter|
+|Buffering|BufferedInputStream|BufferedOutputStream|BufferedReader|BufferedWriter|
+|Filtering|FilterInputStream|FilterOutputStream|FilterReader|FilterWriter|
+|Parsing|PushbackInputStream/StreamTokenizer||PushbackReader/LineNumberReader||	 
+|Strings|||StringReader|StringWriter|
+|Data|DataInputStream|DataOutputStream|||	 	
+|Data-Formatted||PrintStream||PrintWriter|
+|Objects|ObjectInputStream|ObjectOutputStream|||	 	 
+|Utilities|SequenceInputStream||||
+ 	 	 
 
 ## Абстрактный класс `InputStream`
 Класс `InputStream` является базовым для всех классов, управляющих байтовыми потоками ввода. Рассмотрим его основные методы:
